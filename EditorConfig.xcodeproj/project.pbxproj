@@ -1,0 +1,329 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A93163A01B1D887D00C3140F /* ECEditorConfigWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A931639F1B1D887D00C3140F /* ECEditorConfigWrapper.m */; };
+		A9D230611B1C5F940099FB45 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D230601B1C5F940099FB45 /* AppKit.framework */; };
+		A9D230631B1C5F940099FB45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D230621B1C5F940099FB45 /* Foundation.framework */; };
+		A9D230681B1C5F940099FB45 /* EditorConfig.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = A9D230671B1C5F940099FB45 /* EditorConfig.xcscheme */; };
+		A9D2306B1B1C5F940099FB45 /* ECEditorConfigPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D2306A1B1C5F940099FB45 /* ECEditorConfigPlugin.m */; };
+		A9D2306E1B1C5F940099FB45 /* NSObject+PluginExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D2306D1B1C5F940099FB45 /* NSObject+PluginExtension.m */; };
+		A9FF33541B1C92D500E67E94 /* libeditorconfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FF33531B1C92D500E67E94 /* libeditorconfig.a */; };
+		A9FF33561B1C93D600E67E94 /* libpcre.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FF33551B1C93D600E67E94 /* libpcre.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4EA1468302B0E107C69C9AC4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A931639E1B1D887D00C3140F /* ECEditorConfigWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECEditorConfigWrapper.h; sourceTree = "<group>"; };
+		A931639F1B1D887D00C3140F /* ECEditorConfigWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECEditorConfigWrapper.m; sourceTree = "<group>"; };
+		A9D2305D1B1C5F940099FB45 /* EditorConfig.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EditorConfig.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9D230601B1C5F940099FB45 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		A9D230621B1C5F940099FB45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		A9D230661B1C5F940099FB45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9D230671B1C5F940099FB45 /* EditorConfig.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = EditorConfig.xcscheme; path = EditorConfig.xcodeproj/xcshareddata/xcschemes/EditorConfig.xcscheme; sourceTree = SOURCE_ROOT; };
+		A9D230691B1C5F940099FB45 /* ECEditorConfigPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECEditorConfigPlugin.h; sourceTree = "<group>"; };
+		A9D2306A1B1C5F940099FB45 /* ECEditorConfigPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECEditorConfigPlugin.m; sourceTree = "<group>"; };
+		A9D2306C1B1C5F940099FB45 /* NSObject+PluginExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+PluginExtension.h"; sourceTree = "<group>"; };
+		A9D2306D1B1C5F940099FB45 /* NSObject+PluginExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PluginExtension.m"; sourceTree = "<group>"; };
+		A9FF33511B1C92CF00E67E94 /* editorconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editorconfig.h; sourceTree = "<group>"; };
+		A9FF33521B1C92CF00E67E94 /* editorconfig_handle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editorconfig_handle.h; sourceTree = "<group>"; };
+		A9FF33531B1C92D500E67E94 /* libeditorconfig.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libeditorconfig.a; sourceTree = "<group>"; };
+		A9FF33551B1C93D600E67E94 /* libpcre.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcre.dylib; path = usr/lib/libpcre.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9D2305B1B1C5F940099FB45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9FF33561B1C93D600E67E94 /* libpcre.dylib in Frameworks */,
+				A9D230611B1C5F940099FB45 /* AppKit.framework in Frameworks */,
+				A9FF33541B1C92D500E67E94 /* libeditorconfig.a in Frameworks */,
+				A9D230631B1C5F940099FB45 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9D230541B1C5F940099FB45 = {
+			isa = PBXGroup;
+			children = (
+				A9D230641B1C5F940099FB45 /* EditorConfig */,
+				A9D2305F1B1C5F940099FB45 /* Frameworks */,
+				A9D2305E1B1C5F940099FB45 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9D2305E1B1C5F940099FB45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9D2305D1B1C5F940099FB45 /* EditorConfig.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9D2305F1B1C5F940099FB45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9FF33551B1C93D600E67E94 /* libpcre.dylib */,
+				A9D230601B1C5F940099FB45 /* AppKit.framework */,
+				A9D230621B1C5F940099FB45 /* Foundation.framework */,
+				4EA1468302B0E107C69C9AC4 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9D230641B1C5F940099FB45 /* EditorConfig */ = {
+			isa = PBXGroup;
+			children = (
+				A9D230691B1C5F940099FB45 /* ECEditorConfigPlugin.h */,
+				A9D2306A1B1C5F940099FB45 /* ECEditorConfigPlugin.m */,
+				A9D2306C1B1C5F940099FB45 /* NSObject+PluginExtension.h */,
+				A9D2306D1B1C5F940099FB45 /* NSObject+PluginExtension.m */,
+				A931639E1B1D887D00C3140F /* ECEditorConfigWrapper.h */,
+				A931639F1B1D887D00C3140F /* ECEditorConfigWrapper.m */,
+				A9FF33501B1C92CF00E67E94 /* editorconfig */,
+				A9D230651B1C5F940099FB45 /* Supporting Files */,
+			);
+			path = EditorConfig;
+			sourceTree = "<group>";
+		};
+		A9D230651B1C5F940099FB45 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9D230661B1C5F940099FB45 /* Info.plist */,
+				A9D230671B1C5F940099FB45 /* EditorConfig.xcscheme */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9FF33501B1C92CF00E67E94 /* editorconfig */ = {
+			isa = PBXGroup;
+			children = (
+				A9FF33531B1C92D500E67E94 /* libeditorconfig.a */,
+				A9FF33511B1C92CF00E67E94 /* editorconfig.h */,
+				A9FF33521B1C92CF00E67E94 /* editorconfig_handle.h */,
+			);
+			path = editorconfig;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9D2305C1B1C5F940099FB45 /* EditorConfig */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9D230711B1C5F940099FB45 /* Build configuration list for PBXNativeTarget "EditorConfig" */;
+			buildPhases = (
+				A9D230591B1C5F940099FB45 /* Sources */,
+				A9D2305A1B1C5F940099FB45 /* Resources */,
+				A9D2305B1B1C5F940099FB45 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EditorConfig;
+			productName = EditorConfig;
+			productReference = A9D2305D1B1C5F940099FB45 /* EditorConfig.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9D230551B1C5F940099FB45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Marco Sero";
+				TargetAttributes = {
+					A9D2305C1B1C5F940099FB45 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+				};
+			};
+			buildConfigurationList = A9D230581B1C5F940099FB45 /* Build configuration list for PBXProject "EditorConfig" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A9D230541B1C5F940099FB45;
+			productRefGroup = A9D2305E1B1C5F940099FB45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9D2305C1B1C5F940099FB45 /* EditorConfig */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9D2305A1B1C5F940099FB45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9D230681B1C5F940099FB45 /* EditorConfig.xcscheme in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9D230591B1C5F940099FB45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9D2306B1B1C5F940099FB45 /* ECEditorConfigPlugin.m in Sources */,
+				A9D2306E1B1C5F940099FB45 /* NSObject+PluginExtension.m in Sources */,
+				A93163A01B1D887D00C3140F /* ECEditorConfigWrapper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A9D2306F1B1C5F940099FB45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		A9D230701B1C5F940099FB45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+			};
+			name = Release;
+		};
+		A9D230721B1C5F940099FB45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = EditorConfig/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EditorConfig",
+					"$(PROJECT_DIR)/EditorConfig/editorconfig",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = editorconfig;
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		A9D230731B1C5F940099FB45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = EditorConfig/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EditorConfig",
+					"$(PROJECT_DIR)/EditorConfig/editorconfig",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = editorconfig;
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9D230581B1C5F940099FB45 /* Build configuration list for PBXProject "EditorConfig" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9D2306F1B1C5F940099FB45 /* Debug */,
+				A9D230701B1C5F940099FB45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9D230711B1C5F940099FB45 /* Build configuration list for PBXNativeTarget "EditorConfig" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9D230721B1C5F940099FB45 /* Debug */,
+				A9D230731B1C5F940099FB45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A9D230551B1C5F940099FB45 /* Project object */;
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   version = "1.3">
+   <BuildAction>
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForRunning = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A9D2305C1B1C5F940099FB45"
+               BuildableName = "EditorConfig.xcplugin"
+               BlueprintName = "EditorConfig"
+               ReferencedContainer = "container:EditorConfig.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <LaunchAction
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug">
+      <PathRunnable
+         FilePath = "/Applications/Xcode.app">
+      </PathRunnable>
+   </LaunchAction>
+</Scheme>
