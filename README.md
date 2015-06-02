@@ -2,7 +2,7 @@
 
 Plugin to add [EditorConfig](http://editorconfig.org) support to Xcode.
 
-## What is EditorConfig?
+## What is EditorConfig
 
 > EditorConfig helps developers define and maintain consistent coding styles between different editors and IDEs. The EditorConfig project consists of a file format for defining coding styles and a collection of text editor plugins that enable editors to read the file format and adhere to defined styles. EditorConfig files are easily readable and they work nicely with version control systems.
 
@@ -18,6 +18,9 @@ This is particularly useful in different scenarios:
 
 ## Install
 Install via [Alcatraz](http://alcatraz.io). Just search for “EditorConfig”.
+
+## How this is different from ClangFormat
+ClangFormat is a much more powerful tool, but it can be overkill for simply changing indentation settings.
 
 ## Contact
 [marcosero.com](http://www.marcosero.com)  
