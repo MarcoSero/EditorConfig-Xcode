@@ -10,14 +10,21 @@ For more info, head to [http://editorconfig.org](http://editorconfig.org)
 
 ## What this plugin does
 When opening a file, the plugin looks for a file named `.editorconfig` in the directory of the opened file and in every parent directory.
-Once and the file is found, the coding styles for the file extension will be read and the plugin will dynamically change the Xcode settings to match the style.
+Once the file is found, the coding styles for the file extension will be read and the plugin will dynamically change the Xcode settings to match the style.
 
 This is particularly useful in different scenarios:
-- When you want to contribute to a project which has a different style guide from what you normally use.
-- You prefer indenting Objective-C and Swift code differently.
+
+- When contributing to a project which has a different style guide from what you normally use, you can just use a different `.editorconfig` to override the default settings.
+- If you like having different indentation settings for different languages (e.g. Objective-C and Swift).
+- You prefer your indentation settings to be editor-agnostic.
 
 ## Install
 Install via [Alcatraz](http://alcatraz.io). Just search for “EditorConfig”.
+
+## Settings currently supported
+- `indent_style`
+- `indent_size`
+- `tab_width`
 
 ## How this is different from ClangFormat
 ClangFormat is a much more powerful tool, but it can be overkill for simply changing indentation settings.
