@@ -45,7 +45,13 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
 - (void)onFileChangeNotification:(NSNotification *)notification
 {
   NSDocument *currentDocument = notification.object;
-  NSURL *fileURL = currentDocument.fileURL;
+  if ([currentDocument respondsToSelector:@selector(fileURL)]) {
+    [self updateSettingsForFileURL:currentDocument.fileURL];
+  }
+}
+
+- (void)updateSettingsForFileURL:(NSURL *)fileURL
+{
   NSDictionary *editorConfig = [ECEditorConfigWrapper editorConfigurationForFileURL:fileURL];
   
   if (editorConfig[ECIndentSizeKey]) {
