@@ -20,7 +20,7 @@ This is particularly useful in different scenarios:
 Install via [Alcatraz](http://alcatraz.io). Just search for “EditorConfig”.
 
 ## Contact
-[marcosero.com](http://www.marcosero.com)
+[marcosero.com](http://www.marcosero.com)  
 [@marcosero](http://twitter.com/marcosero)
 
 ## License
