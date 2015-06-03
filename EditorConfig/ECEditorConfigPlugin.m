@@ -12,8 +12,8 @@
 static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDidChangeNotification";
 
 @interface ECEditorConfigPlugin ()
-
 @property (nonatomic, strong, readwrite) NSBundle *bundle;
+@property (nonatomic, strong) dispatch_queue_t updateSettingsQueue;
 @end
 
 @implementation ECEditorConfigPlugin
@@ -29,7 +29,8 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
   if (!self) {
     return nil;
   }
-  self.bundle = plugin;
+  _bundle = plugin;
+  _updateSettingsQueue = dispatch_queue_create("com.marcosero.EditorConfig.queue", DISPATCH_QUEUE_SERIAL);
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(onFileChangeNotification:)
                                                name:IDEEditorDocumentDidChangeNotification
@@ -45,9 +46,12 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
 - (void)onFileChangeNotification:(NSNotification *)notification
 {
   NSDocument *currentDocument = notification.object;
-  if ([currentDocument respondsToSelector:@selector(fileURL)]) {
-    [self updateSettingsForFileURL:currentDocument.fileURL];
+  if (![currentDocument respondsToSelector:@selector(fileURL)]) {
+    return;
   }
+  dispatch_async(self.updateSettingsQueue, ^{
+    [self updateSettingsForFileURL:currentDocument.fileURL];
+  });
 }
 
 - (void)updateSettingsForFileURL:(NSURL *)fileURL
