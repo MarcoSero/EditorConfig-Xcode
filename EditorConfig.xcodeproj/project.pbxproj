@@ -189,7 +189,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$PROJECT_DIR\"/EditorConfig/editorconfig-core-c\ncmake .\nmake install";
+			shellScript = "export PATH=/usr/local/bin:$PATH\n\ncd \"$PROJECT_DIR\"/EditorConfig/editorconfig-core-c\ncmake .\nmake install\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
