@@ -13,7 +13,7 @@
 		A9D230681B1C5F940099FB45 /* EditorConfig.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = A9D230671B1C5F940099FB45 /* EditorConfig.xcscheme */; };
 		A9D2306B1B1C5F940099FB45 /* ECEditorConfigPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D2306A1B1C5F940099FB45 /* ECEditorConfigPlugin.m */; };
 		A9D2306E1B1C5F940099FB45 /* NSObject+PluginExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D2306D1B1C5F940099FB45 /* NSObject+PluginExtension.m */; };
-		A9FF33541B1C92D500E67E94 /* libeditorconfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FF33531B1C92D500E67E94 /* libeditorconfig.a */; };
+		A9F5388C1B1EE7D7009F5968 /* libeditorconfig_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F5388B1B1EE7D7009F5968 /* libeditorconfig_static.a */; };
 		A9FF33561B1C93D600E67E94 /* libpcre.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FF33551B1C93D600E67E94 /* libpcre.dylib */; };
 /* End PBXBuildFile section */
 
@@ -30,9 +30,9 @@
 		A9D2306A1B1C5F940099FB45 /* ECEditorConfigPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECEditorConfigPlugin.m; sourceTree = "<group>"; };
 		A9D2306C1B1C5F940099FB45 /* NSObject+PluginExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+PluginExtension.h"; sourceTree = "<group>"; };
 		A9D2306D1B1C5F940099FB45 /* NSObject+PluginExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PluginExtension.m"; sourceTree = "<group>"; };
-		A9FF33511B1C92CF00E67E94 /* editorconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editorconfig.h; sourceTree = "<group>"; };
-		A9FF33521B1C92CF00E67E94 /* editorconfig_handle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editorconfig_handle.h; sourceTree = "<group>"; };
-		A9FF33531B1C92D500E67E94 /* libeditorconfig.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libeditorconfig.a; sourceTree = "<group>"; };
+		A9F5388B1B1EE7D7009F5968 /* libeditorconfig_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libeditorconfig_static.a; path = "editorconfig-core-c/lib/libeditorconfig_static.a"; sourceTree = "<group>"; };
+		A9F5388D1B1EE7E3009F5968 /* editorconfig_handle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = editorconfig_handle.h; path = "editorconfig-core-c/include/editorconfig/editorconfig_handle.h"; sourceTree = "<group>"; };
+		A9F5388E1B1EE7E3009F5968 /* editorconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = editorconfig.h; path = "editorconfig-core-c/include/editorconfig/editorconfig.h"; sourceTree = "<group>"; };
 		A9FF33551B1C93D600E67E94 /* libpcre.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcre.dylib; path = usr/lib/libpcre.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -43,7 +43,7 @@
 			files = (
 				A9FF33561B1C93D600E67E94 /* libpcre.dylib in Frameworks */,
 				A9D230611B1C5F940099FB45 /* AppKit.framework in Frameworks */,
-				A9FF33541B1C92D500E67E94 /* libeditorconfig.a in Frameworks */,
+				A9F5388C1B1EE7D7009F5968 /* libeditorconfig_static.a in Frameworks */,
 				A9D230631B1C5F940099FB45 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,13 +82,13 @@
 		A9D230641B1C5F940099FB45 /* EditorConfig */ = {
 			isa = PBXGroup;
 			children = (
+				A9F5388A1B1EE7C8009F5968 /* libeditorconfig */,
 				A9D230691B1C5F940099FB45 /* ECEditorConfigPlugin.h */,
 				A9D2306A1B1C5F940099FB45 /* ECEditorConfigPlugin.m */,
 				A9D2306C1B1C5F940099FB45 /* NSObject+PluginExtension.h */,
 				A9D2306D1B1C5F940099FB45 /* NSObject+PluginExtension.m */,
 				A931639E1B1D887D00C3140F /* ECEditorConfigWrapper.h */,
 				A931639F1B1D887D00C3140F /* ECEditorConfigWrapper.m */,
-				A9FF33501B1C92CF00E67E94 /* editorconfig */,
 				A9D230651B1C5F940099FB45 /* Supporting Files */,
 			);
 			path = EditorConfig;
@@ -103,14 +103,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A9FF33501B1C92CF00E67E94 /* editorconfig */ = {
+		A9F5388A1B1EE7C8009F5968 /* libeditorconfig */ = {
 			isa = PBXGroup;
 			children = (
-				A9FF33531B1C92D500E67E94 /* libeditorconfig.a */,
-				A9FF33511B1C92CF00E67E94 /* editorconfig.h */,
-				A9FF33521B1C92CF00E67E94 /* editorconfig_handle.h */,
+				A9F5388D1B1EE7E3009F5968 /* editorconfig_handle.h */,
+				A9F5388E1B1EE7E3009F5968 /* editorconfig.h */,
+				A9F5388B1B1EE7D7009F5968 /* libeditorconfig_static.a */,
 			);
-			path = editorconfig;
+			name = libeditorconfig;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +120,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9D230711B1C5F940099FB45 /* Build configuration list for PBXNativeTarget "EditorConfig" */;
 			buildPhases = (
+				A9F5388F1B1EE987009F5968 /* Compile editorconfig-core-c */,
 				A9D230591B1C5F940099FB45 /* Sources */,
 				A9D2305A1B1C5F940099FB45 /* Resources */,
 				A9D2305B1B1C5F940099FB45 /* Frameworks */,
@@ -174,6 +175,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A9F5388F1B1EE987009F5968 /* Compile editorconfig-core-c */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Compile editorconfig-core-c";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$PROJECT_DIR\"/EditorConfig/editorconfig-core-c\ncmake .\nmake install";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9D230591B1C5F940099FB45 /* Sources */ = {
@@ -267,16 +285,21 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/EditorConfig/editorconfig-core-c/include",
+				);
 				INFOPLIST_FILE = EditorConfig/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EditorConfig",
-					"$(PROJECT_DIR)/EditorConfig/editorconfig",
+					"$(PROJECT_DIR)/EditorConfig/editorconfig-core-c/lib",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = editorconfig;
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Debug;
@@ -288,16 +311,21 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/EditorConfig/editorconfig-core-c/include",
+				);
 				INFOPLIST_FILE = EditorConfig/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EditorConfig",
-					"$(PROJECT_DIR)/EditorConfig/editorconfig",
+					"$(PROJECT_DIR)/EditorConfig/editorconfig-core-c/lib",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = editorconfig;
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Release;
