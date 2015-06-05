@@ -70,6 +70,8 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
     BOOL indentUsingTabs = [editorConfig[ECIndentStyleKey] isEqualToString:@"tab"];
     [[NSUserDefaults standardUserDefaults] setObject:@(indentUsingTabs) forKey:@"DVTTextIndentUsingTabs"];
   }
+  
+  [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end
