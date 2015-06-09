@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0A61B5586F9384D1F52FBD946E8F3FDE0B5303E7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0A61B5586F9384D1F52FBD946E8F3FDE0B5303E7" : 0,
+    "B8BB332BF7FB412704858443286205D5046632C6" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EC0E2388-DE1D-45BE-953D-65C441256B30",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0A61B5586F9384D1F52FBD946E8F3FDE0B5303E7" : "EditorConfig-Xcode-Plugin",
+    "B8BB332BF7FB412704858443286205D5046632C6" : "EditorConfig-Xcode-PluginEditorConfig\/editorconfig-core-c"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "EditorConfig",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "EditorConfig.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:MarcoSero\/EditorConfig-Xcode.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0A61B5586F9384D1F52FBD946E8F3FDE0B5303E7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:editorconfig\/editorconfig-core-c.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B8BB332BF7FB412704858443286205D5046632C6"
+    }
+  ]
+}
