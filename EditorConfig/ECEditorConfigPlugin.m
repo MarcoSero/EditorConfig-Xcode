@@ -184,10 +184,13 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
   }
   else
   {
-    self.fileNotFoundItem = [[NSMenuItem alloc] initWithTitle:@".editorconfig Not Loaded, Using Default Settings"
-                                                       action:NULL
-                                                keyEquivalent:@""];
-    [self.editorConfigMenuItem.submenu insertItem:self.fileNotFoundItem atIndex:0];
+    if ([self.editorConfigMenuItem.submenu indexOfItem:self.fileNotFoundItem] == -1)
+    {
+      self.fileNotFoundItem = [[NSMenuItem alloc] initWithTitle:@".editorconfig Not Loaded, Using Default Settings"
+                                                         action:NULL
+                                                  keyEquivalent:@""];
+      [self.editorConfigMenuItem.submenu insertItem:self.fileNotFoundItem atIndex:0];
+    }
   }
 }
 
