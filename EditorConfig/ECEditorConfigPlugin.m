@@ -20,6 +20,8 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
 @property (nonatomic, strong) NSString *tabWidth;
 @property (nonatomic, strong) NSString *indentWidth;
 
+@property (nonatomic, strong) NSMenuItem *editorConfigMenuItem;
+@property (nonatomic, strong) NSMenuItem *fileNotFoundItem;
 @property (nonatomic, strong) NSMenuItem *indentStyleItem;
 @property (nonatomic, strong) NSMenuItem *tabWidthItem;
 @property (nonatomic, strong) NSMenuItem *indentWidthItem;
@@ -75,10 +77,10 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
   NSString *editorConfigMenuTitle = @"Editor Config";
   if (editorMenuItem && ![editorMenuItem.submenu itemWithTitle:editorConfigMenuTitle]) {
     
-    NSMenuItem *editorConfigMenuItem = [[NSMenuItem alloc] initWithTitle:editorConfigMenuTitle
+    self.editorConfigMenuItem = [[NSMenuItem alloc] initWithTitle:editorConfigMenuTitle
                                                                   action:NULL
                                                            keyEquivalent:@""];
-    [editorConfigMenuItem setTarget:self];
+    [self.editorConfigMenuItem setTarget:self];
     
     self.indentStyleItem = [[NSMenuItem alloc] initWithTitle:[self indentStyleString]
                                                       action:NULL
@@ -92,13 +94,13 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
                                                       action:NULL
                                                keyEquivalent:@""];
     
-    editorConfigMenuItem.submenu = [[NSMenu alloc] initWithTitle:@""];
-    [editorConfigMenuItem.submenu addItem:self.indentStyleItem];
-    [editorConfigMenuItem.submenu addItem:self.tabWidthItem];
-    [editorConfigMenuItem.submenu addItem:self.indentWidthItem];
+    self.editorConfigMenuItem.submenu = [[NSMenu alloc] initWithTitle:@""];
+    [self.editorConfigMenuItem.submenu addItem:self.indentStyleItem];
+    [self.editorConfigMenuItem.submenu addItem:self.tabWidthItem];
+    [self.editorConfigMenuItem.submenu addItem:self.indentWidthItem];
     
     [editorMenuItem.submenu addItem:[NSMenuItem separatorItem]];
-    [editorMenuItem.submenu addItem:editorConfigMenuItem];
+    [editorMenuItem.submenu addItem:self.editorConfigMenuItem];
   }
 }
 
@@ -122,21 +124,27 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
 {
   NSDictionary *editorConfig = [ECEditorConfigWrapper editorConfigurationForFileURL:fileURL];
   
-  if (editorConfig[ECIndentStyleKey]) {
-    self.indentUsingTabs = [editorConfig[ECIndentStyleKey] isEqualToString:@"tab"];
+  NSString *indentStyleFromConfigFile = editorConfig[ECIndentStyleKey];
+  NSString *indentWidthFromConfigFile = editorConfig[ECIndentSizeKey];
+  NSString *tabWidthFromConfigFile = editorConfig[ECTabWidthKey];
+  
+  self.configFileFound = (indentStyleFromConfigFile != nil) | (indentWidthFromConfigFile != nil) | (tabWidthFromConfigFile != nil);
+  
+  if (indentStyleFromConfigFile) {
+    self.indentUsingTabs = [indentStyleFromConfigFile isEqualToString:@"tab"];
     [[NSUserDefaults standardUserDefaults] setObject:@(self.indentUsingTabs) forKey:@"DVTTextIndentUsingTabs"];
     NSLog(@"EditorConfig: Updated %@ to %@", ECIndentStyleKey, self.indentUsingTabs ? @"tab" : @"space");
   }
   
-  if (editorConfig[ECIndentSizeKey]) {
-    [[NSUserDefaults standardUserDefaults] setObject:editorConfig[ECIndentSizeKey] forKey:@"DVTTextIndentWidth"];
-    self.indentWidth = editorConfig[ECIndentSizeKey];
+  if (indentWidthFromConfigFile) {
+    [[NSUserDefaults standardUserDefaults] setObject:indentWidthFromConfigFile forKey:@"DVTTextIndentWidth"];
+    self.indentWidth = indentWidthFromConfigFile;
     NSLog(@"EditorConfig: Updated %@ to %@", ECIndentSizeKey, self.indentWidth);
   }
   
-  if (editorConfig[ECTabWidthKey]) {
-    [[NSUserDefaults standardUserDefaults] setObject:editorConfig[ECTabWidthKey] forKey:@"DVTTextIndentTabWidth"];
-    self.tabWidth = editorConfig[ECTabWidthKey];
+  if (tabWidthFromConfigFile) {
+    [[NSUserDefaults standardUserDefaults] setObject:tabWidthFromConfigFile forKey:@"DVTTextIndentTabWidth"];
+    self.tabWidth = tabWidthFromConfigFile;
     NSLog(@"EditorConfig: Updated %@ to %@", ECTabWidthKey, self.tabWidth);
   }
   
@@ -163,19 +171,42 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
 }
 
 #pragma mark - Helpers
+- (void)setConfigFileFound:(BOOL)configFileFound
+{
+  _configFileFound = configFileFound;
+  
+  if (configFileFound)
+  {
+    if (self.fileNotFoundItem)
+    {
+      [self.editorConfigMenuItem.submenu removeItem:self.fileNotFoundItem];
+    }
+  }
+  else
+  {
+    self.fileNotFoundItem = [[NSMenuItem alloc] initWithTitle:@".editorconfig Not Loaded, Using Default Settings"
+                                                       action:NULL
+                                                keyEquivalent:@""];
+    [self.editorConfigMenuItem.submenu insertItem:self.fileNotFoundItem atIndex:0];
+  }
+}
+
 - (NSString *)indentStyleString
 {
-  return [NSString stringWithFormat:@"Indent Style: %@", self.indentUsingTabs ? @"Tabs" : @"Spaces"];
+  BOOL indentUsingTabs = [[NSUserDefaults standardUserDefaults] boolForKey:@"DVTTextIndentUsingTabs"];
+  return [NSString stringWithFormat:@"Indent Style: %@", indentUsingTabs ? @"Tabs" : @"Spaces"];
 }
 
 - (NSString *)tabWidthString
 {
-  return [NSString stringWithFormat:@"Tab Width: %@", self.tabWidth];
+  NSString *tabWidth = [[NSUserDefaults standardUserDefaults] stringForKey:@"DVTTextIndentTabWidth"];
+  return [NSString stringWithFormat:@"Tab Width: %@", tabWidth];
 }
 
 - (NSString *)indentWidthString
 {
-  return [NSString stringWithFormat:@"Indent Width: %@", self.indentWidth];
+  NSString *indentWidth = [[NSUserDefaults standardUserDefaults] stringForKey:@"DVTTextIndentWidth"];
+  return [NSString stringWithFormat:@"Indent Width: %@", indentWidth];
 }
 
 @end

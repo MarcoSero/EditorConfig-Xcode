@@ -17,6 +17,7 @@ static ECEditorConfigPlugin *sharedPlugin;
 @interface ECEditorConfigPlugin : NSObject
 
 @property (nonatomic, strong, readonly) NSBundle* bundle;
+@property (nonatomic, assign) BOOL configFileFound;
 
 + (instancetype)sharedPlugin;
 
