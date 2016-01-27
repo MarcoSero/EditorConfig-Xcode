@@ -72,23 +72,23 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
 - (void)createMenuItem
 {
   NSMenuItem * editorMenuItem = [[NSApp mainMenu] itemWithTitle: @"Editor"];
-  if (editorMenuItem && ![editorMenuItem.submenu itemWithTitle:@"Editor Config"]) {
+  NSString *editorConfigMenuTitle = @"Editor Config";
+  if (editorMenuItem && ![editorMenuItem.submenu itemWithTitle:editorConfigMenuTitle]) {
     
-    
-    NSMenuItem *editorConfigMenuItem = [[NSMenuItem alloc] initWithTitle:@"Editor Config"
+    NSMenuItem *editorConfigMenuItem = [[NSMenuItem alloc] initWithTitle:editorConfigMenuTitle
                                                                   action:NULL
                                                            keyEquivalent:@""];
     [editorConfigMenuItem setTarget:self];
     
-    self.indentStyleItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"Indent Style: %@", _indentUsingTabs ? @"Tabs" : @"Spaces"]
+    self.indentStyleItem = [[NSMenuItem alloc] initWithTitle:[self indentStyleString]
                                                       action:NULL
                                                keyEquivalent:@""];
     
-    self.tabWidthItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"Tab Width: %@", _tabWidth]
+    self.tabWidthItem = [[NSMenuItem alloc] initWithTitle:[self tabWidthString]
                                                    action:NULL
                                             keyEquivalent:@""];
     
-    self.indentWidthItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"Indent Width: %@", _indentWidth]
+    self.indentWidthItem = [[NSMenuItem alloc] initWithTitle:[self indentWidthString]
                                                       action:NULL
                                                keyEquivalent:@""];
     
@@ -147,19 +147,35 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
 - (void)setIndentUsingTabs:(BOOL)indentUsingTabs
 {
   _indentUsingTabs = indentUsingTabs;
-  self.indentStyleItem.title = [NSString stringWithFormat:@"Indent Style: %@", _indentUsingTabs ? @"Tabs" : @"Spaces"];
+  self.indentStyleItem.title = [self indentStyleString];
 }
 
 - (void)setTabWidth:(NSString *)tabWidth
 {
   _tabWidth = tabWidth;
-  self.tabWidthItem.title = [NSString stringWithFormat:@"Tab Width: %@", _tabWidth];
+  self.tabWidthItem.title = [self tabWidthString];
 }
 
 - (void)setIndentWidth:(NSString *)indentWidth
 {
   _indentWidth = indentWidth;
-  self.indentWidthItem.title = [NSString stringWithFormat:@"Indent Width: %@", _indentWidth];
+  self.indentWidthItem.title = [self indentWidthString];
+}
+
+#pragma mark - Helpers
+- (NSString *)indentStyleString
+{
+  return [NSString stringWithFormat:@"Indent Style: %@", self.indentUsingTabs ? @"Tabs" : @"Spaces"];
+}
+
+- (NSString *)tabWidthString
+{
+  return [NSString stringWithFormat:@"Tab Width: %@", self.tabWidth];
+}
+
+- (NSString *)indentWidthString
+{
+  return [NSString stringWithFormat:@"Indent Width: %@", self.indentWidth];
 }
 
 @end
