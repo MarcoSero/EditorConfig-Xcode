@@ -14,9 +14,9 @@
 
 + (void)pluginDidLoad:(NSBundle *)plugin
 {
-  static dispatch_once_t onceToken;
   NSString *currentApplicationName = [[NSBundle mainBundle] infoDictionary][@"CFBundleName"];
   if ([currentApplicationName isEqual:@"Xcode"]) {
+    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
       sharedPlugin = [[ECEditorConfigPlugin alloc] initWithBundle:plugin];
     });
