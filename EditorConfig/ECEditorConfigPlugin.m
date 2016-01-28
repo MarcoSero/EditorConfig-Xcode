@@ -177,7 +177,7 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
   
   if (configFileFound)
   {
-    if (self.fileNotFoundItem)
+    if ([self.editorConfigMenuItem.submenu indexOfItem:self.fileNotFoundItem] >= 0)
     {
       [self.editorConfigMenuItem.submenu removeItem:self.fileNotFoundItem];
     }
