@@ -51,29 +51,29 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
                                                name:IDEEditorDocumentDidChangeNotification
                                              object:nil];
   
-  [[NSNotificationCenter defaultCenter] addObserver: self
-                                           selector: @selector(menuDidChange:)
-                                               name: NSMenuDidChangeItemNotification
-                                             object: nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(menuDidChange:)
+                                               name:NSMenuDidChangeItemNotification
+                                             object:nil];
   return self;
 }
 
-- (void) menuDidChange: (NSNotification *) notification {
-  [[NSNotificationCenter defaultCenter] removeObserver: self
-                                                  name: NSMenuDidChangeItemNotification
-                                                object: nil];
+- (void)menuDidChange:(NSNotification *)notification {
+  [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                  name:NSMenuDidChangeItemNotification
+                                                object:nil];
   
   [self createMenuItem];
   
-  [[NSNotificationCenter defaultCenter] addObserver: self
-                                           selector: @selector(menuDidChange:)
-                                               name: NSMenuDidChangeItemNotification
-                                             object: nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(menuDidChange:)
+                                               name:NSMenuDidChangeItemNotification
+                                             object:nil];
 }
 
 - (void)createMenuItem
 {
-  NSMenuItem * editorMenuItem = [[NSApp mainMenu] itemWithTitle: @"Editor"];
+  NSMenuItem * editorMenuItem = [[NSApp mainMenu] itemWithTitle:@"Editor"];
   NSString *editorConfigMenuTitle = @"Editor Config";
   if (editorMenuItem && ![editorMenuItem.submenu itemWithTitle:editorConfigMenuTitle]) {
     
@@ -131,8 +131,8 @@ static NSString *IDEEditorDocumentDidChangeNotification = @"IDEEditorDocumentDid
   self.configFileFound = (indentStyleFromConfigFile != nil) | (indentWidthFromConfigFile != nil) | (tabWidthFromConfigFile != nil);
   
   if (indentStyleFromConfigFile) {
-    self.indentUsingTabs = [indentStyleFromConfigFile isEqualToString:@"tab"];
     [[NSUserDefaults standardUserDefaults] setObject:@(self.indentUsingTabs) forKey:@"DVTTextIndentUsingTabs"];
+    self.indentUsingTabs = [indentStyleFromConfigFile isEqualToString:@"tab"];
     NSLog(@"EditorConfig: Updated %@ to %@", ECIndentStyleKey, self.indentUsingTabs ? @"tab" : @"space");
   }
   
