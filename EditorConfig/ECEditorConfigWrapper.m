@@ -47,6 +47,7 @@ NSString *const ECTabWidthKey = @"tab_width";
   if (editorconfig_handle_destroy(eh) != 0) {
     ECLog(@"Failed to destroy editorconfig_handle.");
   }
+  
   return config;
 }
 
